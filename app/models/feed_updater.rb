@@ -16,6 +16,7 @@ class FeedUpdater
     feed = Feedjira.parse(xml)
     @db_feed.transaction do
       @db_feed.title = feed.title
+      @db_feed.homepage_url = feed.url
       @db_feed.save!
 
       feed.entries.each do |entry|

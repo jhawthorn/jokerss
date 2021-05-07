@@ -1,20 +1,8 @@
-<div id="<%= dom_id feed %>" class="scaffold_record">
-  <p>
-    <strong>Title:</strong>
-    <%= feed.title %>
-  </p>
+<div id="<%= dom_id feed %>" class="scaffold_record mb-4 border-2">
+  <h3>
+    <%= link_to feed.title, feed, class: "font-extrabold" %>
+    (<%= feed.homepage_url %>)
+  </h3>
 
-  <p>
-    <strong>Fetch url:</strong>
-    <%= feed.fetch_url %>
-  </p>
-
-  <p>
-    <strong>Homepage url:</strong>
-    <%= feed.homepage_url %>
-  </p>
-
-  <p>
-    <%= link_to "Show this feed", feed %>
-  </p>
+  <%= feed.entries_count %> Articles
 </div>

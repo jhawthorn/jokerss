@@ -152,6 +152,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.5)
     regexp_parser (2.1.1)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -177,6 +178,8 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     stackprof (0.2.16)
+    tailwindcss-rails (0.3.3)
+      rails (>= 6.0.0)
     thor (1.1.0)
     tilt (2.0.10)
     turbo-rails (0.5.9)
@@ -213,10 +216,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails!
+  redis (~> 4.0)
   sass-rails (>= 6)
   selenium-webdriver
   sqlite3 (~> 1.4)
   stackprof (= 0.2.16)
+  tailwindcss-rails
   turbo-rails
   tzinfo-data
   webdrivers

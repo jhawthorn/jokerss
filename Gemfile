@@ -27,6 +27,8 @@ gem 'redis', '~> 4.0'
 
 gem 'turbo-rails'
 
+gem 'tailwindcss-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

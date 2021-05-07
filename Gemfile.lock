@@ -89,11 +89,9 @@ GEM
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    bindex (0.8.1)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
-    byebug (11.1.3)
     capybara (3.35.3)
       addressable
       mini_mime (>= 0.1.3)
@@ -103,6 +101,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    coderay (1.1.3)
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
@@ -122,6 +121,7 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    memory_profiler (1.0.0)
     method_source (1.0.0)
     mini_mime (1.1.0)
     minitest (5.14.4)
@@ -129,6 +129,9 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     public_suffix (4.0.6)
     puma (5.2.2)
       nio4r (~> 2.0)
@@ -165,7 +168,6 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
-    spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -174,6 +176,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    stackprof (0.2.16)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -181,11 +184,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    web-console (4.1.0)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0)
     webdrivers (4.6.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
@@ -195,6 +193,7 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
+    webrick (1.7.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -207,22 +206,23 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
-  byebug
   capybara (>= 3.26)
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  memory_profiler
+  pry
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails!
   sass-rails (>= 6)
   selenium-webdriver
-  spring
   sqlite3 (~> 1.4)
+  stackprof (= 0.2.16)
   turbolinks (~> 5)
   tzinfo-data
-  web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  webrick
 
 RUBY VERSION
    ruby 3.0.0p0

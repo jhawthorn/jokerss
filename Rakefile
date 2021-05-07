@@ -4,3 +4,7 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+task :refresh => :environment do
+  Feed.fetch_all!
+end

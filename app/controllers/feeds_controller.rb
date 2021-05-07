@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_action :set_feed, only: %i[ show edit update destroy ]
+  before_action :set_feed, only: %i[ show edit update destroy refresh ]
 
   # GET /feeds or /feeds.json
   def index
@@ -17,6 +17,12 @@ class FeedsController < ApplicationController
 
   # GET /feeds/1/edit
   def edit
+  end
+
+  # POST /feeds/1/refresh
+  def refresh
+    RefreshJob.perform_now(@feed)
+    redirect_back fallback_location: @feed
   end
 
   # POST /feeds or /feeds.json

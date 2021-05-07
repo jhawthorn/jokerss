@@ -1,8 +1,10 @@
-<div id="<%= dom_id feed %>" class="scaffold_record mb-4 border-2">
+<div id="<%= dom_id feed %>" class="scaffold_record mb-4 border-2 relative">
   <h3>
     <%= link_to feed.title, feed, class: "font-extrabold" %>
     (<%= feed.homepage_url %>)
   </h3>
 
   <%= feed.entries_count %> Articles
+
+  <%= button_to "refresh", refresh_feed_path(feed) %>
 </div>

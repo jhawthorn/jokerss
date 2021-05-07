@@ -13,6 +13,13 @@
 
   <body>
     <div class="max-w-screen-lg mx-auto">
-    <%= yield %>
+      <nav class="mb-6">
+        <%= link_to "Timeline", timeline_feeds_path, class: "font-bold" %> |
+        <%= link_to "All Feeds", feeds_path, class: "font-bold" %>
+      </nav>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
 class Feed < ApplicationRecord
-  has_many :entries
+  has_many :entries, dependent: :destroy
 
   after_create :enqueue_refresh
   after_update :enqueue_refresh, if: :fetch_url_changed?

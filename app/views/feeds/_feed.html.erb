@@ -6,5 +6,7 @@
 
   <%= feed.entries_count %> Articles
 
-  <%= button_to "refresh", refresh_feed_path(feed) %>
+  <%= button_to "Refresh", refresh_feed_path(feed) %>
+  <%= button_to "Edit", edit_feed_path(feed) %>
+  <%= button_to "Delete", feed_path(feed), method: :delete, data: { confirm: "Are you sure you want to remove #{feed.title}?" } %>
 </div>

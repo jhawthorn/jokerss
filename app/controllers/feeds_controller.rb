@@ -6,6 +6,11 @@ class FeedsController < ApplicationController
     @feeds = Feed.all
   end
 
+  def timeline
+    @feeds = Feed.all
+    @entries = Entry.where(feed: @feeds).order(published: :desc).limit(10)
+  end
+
   # GET /feeds/1 or /feeds/1.json
   def show
   end

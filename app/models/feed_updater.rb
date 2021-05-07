@@ -17,6 +17,16 @@ class FeedUpdater
     @db_feed.transaction do
       @db_feed.title = feed.title
       @db_feed.save!
+
+      feed.entries.each do |entry|
+        db_entry = @db_feed.entries.find_or_initialize_by(guid: entry.id)
+        db_entry.url = entry.url
+        db_entry.title = entry.title
+        db_entry.content = entry.content
+        db_entry.summary = entry.summary
+        db_entry.published = entry.published
+        db_entry.save!
+      end
     end
   end
 

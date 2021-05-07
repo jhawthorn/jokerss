@@ -1,8 +1,9 @@
 class Feed < ApplicationRecord
   has_many :entries
 
-  def entries_count
-    entries.count
+  define_prelude(:entries_count) do |feeds|
+    counts = Entry.where(feed: feeds).group(:feed_id).count
+    feeds.index_with { |x| counts[x.id] }
   end
 
   def fetch!

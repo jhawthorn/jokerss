@@ -3,7 +3,7 @@
 <h1>Feed</h1>
 
 <div id="feeds">
-  <%= render @feeds %>
+  <%= render Prelude.wrap(@feeds.to_a) %>
 </div>
 
 <%= link_to "New feed", new_feed_path %>

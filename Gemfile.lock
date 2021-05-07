@@ -132,6 +132,8 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
+    prelude-batch-loader (0.0.5)
+      activerecord (>= 6)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -217,6 +219,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.3)
   memory_profiler
+  prelude-batch-loader (~> 0.0.5)
   pry
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

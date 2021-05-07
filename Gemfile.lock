@@ -179,9 +179,8 @@ GEM
     stackprof (0.2.16)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.5.9)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     webdrivers (4.6.0)
@@ -218,7 +217,7 @@ DEPENDENCIES
   selenium-webdriver
   sqlite3 (~> 1.4)
   stackprof (= 0.2.16)
-  turbolinks (~> 5)
+  turbo-rails
   tzinfo-data
   webdrivers
   webpacker (~> 5.0)

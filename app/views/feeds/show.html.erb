@@ -7,10 +7,3 @@
     <%= render entry %>
   <% end %>
 </div>
-
-<div>
-  <%= link_to "Edit this feed", edit_feed_path(@feed) %> |
-  <%= link_to "Back to feeds", feeds_path %>
-
-  <%= button_to "Destroy this feed", feed_path(@feed), method: :delete %>
-</div>

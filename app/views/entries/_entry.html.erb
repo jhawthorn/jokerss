@@ -1,0 +1,8 @@
+<div class="p-4 m-4 border-4">
+  <%= link_to entry.url, class: "text-3xl focus:text-black font-extrabold mb-8 mt-2 block" do %>
+    <%= entry.title %>
+  <% end %>
+  <article class="prose lg:prose-xl">
+    <%= sanitize entry.content %>
+  </article>
+</div>

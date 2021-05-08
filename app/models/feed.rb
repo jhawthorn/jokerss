@@ -9,6 +9,11 @@ class Feed < ApplicationRecord
     feeds.index_with { |x| counts[x.id] }
   end
 
+  define_prelude(:last_published) do |feeds|
+    by_id = Entry.where(feed: feeds).group(:feed_id).maximum(:published)
+    feeds.index_with { |x| by_id[x.id] }
+  end
+
   def fetch!
     FeedUpdater.new(self).call
     self

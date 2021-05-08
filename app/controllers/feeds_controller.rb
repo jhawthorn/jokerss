@@ -3,7 +3,8 @@ class FeedsController < ApplicationController
 
   # GET /feeds or /feeds.json
   def index
-    @feeds = Feed.all
+    @feeds = Prelude.wrap(Feed.all.to_a)
+    @feeds = @feeds.sort_by(&:last_published).reverse
   end
 
   def timeline

@@ -4,7 +4,9 @@
     (<%= feed.homepage_url %>)
   </h3>
 
-  <%= feed.entries_count %> Articles
+  <%= feed.entries_count %> Articles |
+  Last published
+  <%= relative_time feed.last_published %>
 
   <%= button_to "Refresh", refresh_feed_path(feed) %>
   <%= button_to "Edit", edit_feed_path(feed) %>

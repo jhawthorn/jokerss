@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div id="feeds">
-  <%= render Prelude.wrap(@feeds.to_a) %>
+  <%= render @feeds %>
 </div>
 
 <%= link_to "New feed", new_feed_path %>

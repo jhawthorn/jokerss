@@ -14,13 +14,18 @@ class FeedUpdater
   def call
     xml = fetch_xml
     feed = Feedjira.parse(xml)
+    entries = feed.entries
+
     @db_feed.transaction do
       @db_feed.title = feed.title
       @db_feed.homepage_url = feed.url
       @db_feed.save!
 
-      feed.entries.each do |entry|
-        db_entry = @db_feed.entries.find_or_initialize_by(guid: entry.id)
+      existing_db_entries = @db_feed.entries.where(guid: entries.map(&:id)).index_by(&:guid)
+
+      entries.each do |entry|
+        id = entry.id
+        db_entry = existing_db_entries[id] || @db_feed.entries.new(guid: id)
         db_entry.url = entry.url
         db_entry.title = entry.title
         db_entry.content = entry.content || entry.summary

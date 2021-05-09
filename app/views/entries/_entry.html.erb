@@ -8,6 +8,10 @@
     </div>
   </div>
   <article class="prose lg:prose-xl">
-    <%= FeedEntryRenderer.new(entry).to_html %>
+    <% if entry.youtube? %>
+      <%= render "entries/youtube", entry: entry %>
+    <% else %>
+      <%= FeedEntryRenderer.new(entry).to_html %>
+    <% end %>
   </article>
 </div>

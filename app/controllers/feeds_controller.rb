@@ -31,6 +31,16 @@ class FeedsController < ApplicationController
     redirect_back fallback_location: @feed
   end
 
+  # POST /feeds/refresh
+  def refresh_all
+    @feeds = Feed.all
+    @feeds.each do |feed|
+      RefreshJob.perform_later(feed)
+    end
+    redirect_back fallback_location: feeds_path
+  end
+
+
   # POST /feeds or /feeds.json
   def create
     @feed = Feed.new(feed_params)

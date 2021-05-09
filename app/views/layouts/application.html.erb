@@ -15,7 +15,8 @@
     <div class="max-w-screen-lg mx-auto">
       <nav class="mb-6">
         <%= link_to "Timeline", timeline_feeds_path, class: "font-bold" %> |
-        <%= link_to "All Feeds", feeds_path, class: "font-bold" %>
+        <%= link_to "All Feeds", feeds_path, class: "font-bold" %> |
+        <%= link_to "Refresh all", refresh_feeds_path, class: "font-bold", method: :post %>
       </nav>
       <main>
         <%= yield %>

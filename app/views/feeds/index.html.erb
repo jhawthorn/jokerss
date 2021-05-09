@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="mb-3">
+<%= button_to "+ Add feed", new_feed_path, method: :get %>
+</div>
+
 <div id="feeds">
   <%= render @feeds %>
 </div>
-
-<%= link_to "New feed", new_feed_path %>

@@ -26,6 +26,7 @@ class FeedUpdater
         db_entry.content = entry.content || entry.summary
         db_entry.summary = entry.summary
         db_entry.published = entry.published
+        db_entry.data = entry.to_h
         db_entry.save!
       end
     end

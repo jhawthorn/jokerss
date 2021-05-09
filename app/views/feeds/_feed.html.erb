@@ -1,4 +1,4 @@
-<div id="<%= dom_id feed %>" class="scaffold_record mb-4 border-2 relative">
+<div id="<%= dom_id feed %>" class="scaffold_record mb-4 border-2 relative p-2">
   <h3>
     <%= link_to feed.title, feed, class: "font-extrabold" %>
     (<%= feed.homepage_url %>)
@@ -8,7 +8,9 @@
   Last published
   <%= relative_time feed.last_published %>
 
-  <%= button_to "Refresh", refresh_feed_path(feed) %>
-  <%= button_to "Edit", edit_feed_path(feed), method: :get %>
-  <%= button_to "Delete", feed_path(feed), method: :delete, data: { confirm: "Are you sure you want to remove #{feed.title}?" } %>
+  <div class="absolute top-0 right-0 flex gap-1 p-2">
+    <%= button_to "Refresh", refresh_feed_path(feed) %>
+    <%= button_to "Edit", edit_feed_path(feed), method: :get %>
+    <%= button_to "Delete", feed_path(feed), method: :delete, data: { confirm: "Are you sure you want to remove #{feed.title}?" } %>
+  </div>
 </div>

@@ -6,7 +6,7 @@ class Feed < ApplicationRecord
 
   define_prelude(:entries_count) do |feeds|
     counts = Entry.where(feed: feeds).group(:feed_id).count
-    feeds.index_with { |x| counts[x.id] }
+    feeds.index_with { |x| counts.fetch(x.id, 0) }
   end
 
   define_prelude(:last_published) do |feeds|

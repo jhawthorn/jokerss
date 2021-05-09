@@ -7,6 +7,8 @@ class FeedEntryRenderer
   end
 
   def to_html
+    return "" unless @entry.content
+
     result = pipeline.call(@entry.content)
     result[:output].to_s.html_safe
   end

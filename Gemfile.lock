@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/rails/rails.git
-  revision: a31f7645c7bd67996a70c1dc6f2cc6f84959b86e
+  revision: 2af458a10d336ec15a5734dba27709c2f8eb745b
   branch: main
   specs:
     actioncable (7.0.0.alpha)
@@ -169,11 +169,12 @@ GEM
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
     rake (13.0.3)
-    rb-fsevent (0.10.4)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.2.5)
     regexp_parser (2.1.1)
+    rexml (3.2.5)
     rubyzip (2.3.0)
     sanitize (5.2.3)
       crass (~> 1.0.2)
@@ -246,6 +247,7 @@ DEPENDENCIES
   rails!
   rails-html-sanitizer!
   redis (~> 4.0)
+  rexml
   sanitize
   sass-rails (>= 6)
   selenium-webdriver

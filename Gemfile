@@ -32,6 +32,8 @@ gem 'turbo-rails'
 gem 'tailwindcss-rails'
 
 gem 'feedjira'
+gem 'faraday'
+gem 'faraday_middleware'
 
 gem 'sanitize'
 gem 'html-pipeline', github: "gjtorikian/html-pipeline"

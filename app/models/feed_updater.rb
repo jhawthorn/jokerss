@@ -40,19 +40,13 @@ class FeedUpdater
   def fetch_xml
     # FIXME: this could use some safety checks
     uri = URI.parse(@db_feed.fetch_url)
-    request = Net::HTTP::Get.new(uri)
-    request["Accept"] = ACCEPT_HEADER
-
-    req_options = {
-      use_ssl: uri.scheme == "https",
+    headers = {
+      "Accept" => ACCEPT_HEADER
     }
+    response = Faraday.get(uri, nil, headers)
 
-    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-      http.request(request)
-    end
-
-    unless response.code == "200"
-      raise FetchFailed, "status=#{response.code}\n#{response.body}"
+    unless response.success?
+      raise FetchFailed, "status=#{response.status}"
     end
 
     response.body

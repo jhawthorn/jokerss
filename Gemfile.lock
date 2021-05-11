@@ -120,6 +120,17 @@ GEM
     concurrent-ruby (1.1.8)
     crass (1.0.6)
     erubi (1.10.0)
+    faraday (1.4.1)
+      faraday-excon (~> 1.1)
+      faraday-net_http (~> 1.0)
+      faraday-net_http_persistent (~> 1.1)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords (>= 0.0.4)
+    faraday-excon (1.1.0)
+    faraday-net_http (1.0.1)
+    faraday-net_http_persistent (1.1.0)
+    faraday_middleware (1.0.0)
+      faraday (~> 1.0)
     feedjira (3.1.2)
       loofah (>= 2.3.1)
       sax-machine (>= 1.0)
@@ -144,6 +155,7 @@ GEM
     mini_mime (1.1.0)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multipart-post (2.1.1)
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
@@ -175,6 +187,7 @@ GEM
     redis (4.2.5)
     regexp_parser (2.1.1)
     rexml (3.2.5)
+    ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
     sanitize (5.2.3)
       crass (~> 1.0.2)
@@ -235,6 +248,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   capybara (>= 3.26)
+  faraday
+  faraday_middleware
   feedjira
   html-pipeline!
   jbuilder (~> 2.7)

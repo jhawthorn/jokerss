@@ -43,10 +43,14 @@ class FeedsController < ApplicationController
 
   # POST /feeds or /feeds.json
   def create
-    @feed = Feed.new(feed_params)
+    @import = FeedImport.new(feed_params[:fetch_url])
+    @feed = @import.find_or_build_feed
 
     respond_to do |format|
-      if @feed.save
+      if !@feed
+        format.html { render :new, status: :unprocessable_entity, error: "Bad URL for feed" }
+        format.json { render json: {error: "invalid feed URL"}, status: :unprocessable_entity }
+      elsif @feed.save
         format.html { redirect_to @feed, notice: "Feed was successfully created." }
         format.json { render :show, status: :created, location: @feed }
       else

@@ -159,6 +159,8 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.11.3-x86_64-linux)
+      racc (~> 1.4)
     nokogumbo (2.0.5)
       nokogiri (~> 1.8, >= 1.8.4)
     prelude-batch-loader (0.0.5)
@@ -244,6 +246,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (>= 1.4.4)
@@ -274,9 +277,6 @@ DEPENDENCIES
   webdrivers
   webpacker (~> 5.0)
   webrick
-
-RUBY VERSION
-   ruby 3.0.0p0
 
 BUNDLED WITH
    2.2.9

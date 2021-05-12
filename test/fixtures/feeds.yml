@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  fetch_url: MyString
-  homepage_url: MyString
+  title: Hackaday
+  fetch_url: https://hackaday.com/feed/
+  homepage_url: https://hackaday.com/
 
 two:
-  title: MyString
-  fetch_url: MyString
-  homepage_url: MyString
+  title: John Hawthorn
+  fetch_url: https://www.johnhawthorn.com/atom.xml
+  homepage_url: https://www.johnhawthorn.com/

@@ -16,8 +16,9 @@ class FeedsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create feed" do
+    example_feed_url = "https://www.smbc-comics.com/comic/rss"
     assert_difference("Feed.count") do
-      post feeds_url, params: { feed: { fetch_url: @feed.fetch_url, homepage_url: @feed.homepage_url, title: @feed.title } }
+      post feeds_url, params: { feed: { fetch_url: example_feed_url } }
     end
 
     assert_redirected_to feed_url(Feed.last)

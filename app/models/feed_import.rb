@@ -44,8 +44,7 @@ class FeedImport
 
   def guess_from_url
     case @url
-    when /https:\/\/www\.youtube\.com\/user\/([^\/#\?]*)/,
-         /https:\/\/www\.youtube\.com\/c\/([^\/#\?]*)/
+    when /https:\/\/www\.youtube\.com\/user\/([^\/#\?]*)/
       "https://www.youtube.com/feeds/videos.xml?user=#{$1}"
     when /https:\/\/www\.youtube\.com\/channel\/([^\/#\?]*)/
       "https://www.youtube.com/feeds/videos.xml?channel_id=#{$1}"

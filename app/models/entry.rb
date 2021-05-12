@@ -3,6 +3,10 @@ class Entry < ApplicationRecord
 
   serialize :data, JSON
 
+  scope :display_order, ->() {
+    order(published: :desc)
+  }
+
   def youtube?
     data.key?("youtube_video_id")
   end

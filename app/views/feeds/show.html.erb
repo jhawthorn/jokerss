@@ -3,7 +3,7 @@
 <%= render @feed %>
 
 <div>
-  <% @feed.entries.each do |entry| %>
+  <% @feed.entries.display_order.each do |entry| %>
     <%= render entry %>
   <% end %>
 </div>

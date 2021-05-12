@@ -9,7 +9,7 @@ class FeedsController < ApplicationController
 
   def timeline
     @feeds = Feed.all
-    @entries = Entry.where(feed: @feeds).preload(:feed).order(published: :desc).limit(10)
+    @entries = Entry.where(feed: @feeds).preload(:feed).display_order.limit(10)
   end
 
   # GET /feeds/1 or /feeds/1.json

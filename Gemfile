@@ -7,8 +7,7 @@ gem 'rails-html-sanitizer', github: 'rails/rails-html-sanitizer'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
-# Use Puma as the app server
-gem 'puma', '~> 5.0'
+# Use webrock as the app server
 gem 'webrick'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>OPML Feed export</title>
+    </head>
+    <body>
+    <% @feeds.each do |feed| %>
+        <%= tag :outline, text: feed.title, type: "rss", xmlUrl: feed.fetch_url %>
+    <% end %>
+    </body>
+</opml>

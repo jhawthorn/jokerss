@@ -1,0 +1,8 @@
+<h1>Settings</h1>
+
+<%= form_tag import_feeds_path, multipart: true do %>
+  <label for="file">Import OPML</label> <%= file_field_tag "file" %>
+  <%= button_tag "Upload" %>
+<% end %>
+
+<%= link_to "Export OPML", feeds_path(format: :opml) %>
